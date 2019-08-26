@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.score.dao.HuiShiDao">
+	<resultMap id="BaseResultMap" type="com.score.bean.HuShi">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="timestar" property="timestar" jdbcType="VARCHAR" />
+		<result column="timeend" property="timeend" jdbcType="VARCHAR" />
+		<result column="administrative" property="administrative" jdbcType="VARCHAR" />
+		<result column="introduce" property="introduce" jdbcType="VARCHAR" />
+		<result column="huid" property="huid" jdbcType="VARCHAR" />
+	</resultMap>
+<select id="selectAll" resultMap="BaseResultMap">
+ select * from hushi where huid = #{huid}
+</select>
+</mapper>

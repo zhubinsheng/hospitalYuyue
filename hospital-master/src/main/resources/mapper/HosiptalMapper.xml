@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.score.dao.HosiptalDao">
+	<resultMap id="BaseResultMap" type="com.score.bean.Hosiptal">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="hosname" property="hosname" jdbcType="VARCHAR" />
+		<result column="keid" property="keid" jdbcType="INTEGER" />
+
+	</resultMap>
+<select id="selectHos" resultMap="BaseResultMap">
+ select * from Hosiptal
+</select>
+</mapper>

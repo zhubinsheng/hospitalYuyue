@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.score.dao.KeShiDao">
+	<resultMap id="BaseResultMap" type="com.score.bean.KeShi">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="kename" property="kename" jdbcType="VARCHAR" />
+		<result column="keid" property="keid" jdbcType="VARCHAR" />
+		<result column="huid" property="huid" jdbcType="VARCHAR" />
+	</resultMap>
+<select id="selectKe" resultMap="BaseResultMap">
+ select * from KeShi where  keid = #{keid}
+</select>
+	<insert id="insert" parameterType="com.score.bean.RecordVo">
+		INSERT INTO record (USER,hushi,bianhao,keshi,hushiname) VALUE(#{user},#{hushi},#{bianhao},#{keshi},#{hushiname})
+	</insert>
+	<select id="selectrecord" resultType="com.score.bean.RecordVo" parameterType="String">
+		select * from record where user = #{user}
+	</select>
+</mapper>
